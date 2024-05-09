@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hl.css">
+    <script src="script.js"></script>
+    
+    <title>Shop</title>
+</head>
+<body>
+    <header>
+        <nav >
+            <div class="menu" onclick="menu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="index.html"><img src="pic/logo.png" alt="logo"></a>
+    
+        
+            <ul class="first-nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produkty.html">Shop</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="kontakty.html">Contact</a></li>
+            </ul>
+        <ul class="second-nav-list">
+            <a class="login" href="prihlaseni.html">Přihlásit se</a>
+            <a><img src="pic/cart.png" alt="košík"></a>
+        </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="product-container">
+            <div class="product-options">
+                <div class="categories" onclick="clickCategory()">
+                <h5 >Kategorie <img src="/Semestrální_práce/pic/down-arrow (1).png" alt=""></h5>
+                <ul id="ca">
+                   <li><a href="">Muz</a></li> 
+                   <li><a href="">Žena</a></li> 
+                   <li><a href="">Batohy</a></li> 
+                   <li><a href="">Oblečení</a></li> 
+                   <li><a href="">Boty</a></li> 
+                </ul>
+                </div>
+                <div class="categories" onclick="clickType()">
+                <h5>Značky <img src="/pic/down-arrow (1).png" alt=""></h5>
+                <ul id="zn">
+                    <li><a href="">Adidas</a></li>
+                    <li><a href="">Nike</a></li>
+                    <li><a href="">Luis Vitton</a></li>
+                    <li><a href="">Gucci</a></li>
+                </ul>
+                </div>
+                <div class="categories" onclick="clickPrice()">
+                <h5>Cena <img src="/pic/down-arrow (1).png" alt=""></h5>
+                <ul>
+                    <li><a href="">0-1000kč</a></li>
+                    <li><a href="">1000-3000kč</a></li>
+                    <li><a href="">3000-5000</a></li>
+                    <li><a href="">5000 více</a></li>
+                </ul>
+                </div>
+                <div class="categories" onclick="clickSize()">
+                <h5 >Velikost <img src="/pic/down-arrow (1).png" alt=""></h5>
+                <ul id="sz">
+                    <li><a href="">XS</a></li>
+                    <li><a href="">S</a></li>
+                    <li><a href="">M</a></li>
+                    <li><a href="">L</a></li>
+                    <li><a href="">XL</a></li>
+                    <li><a href="">XXL</a></li>
+                </ul>
+            </div>
+            </div>
+            <div id="productContainer" class="productDiv">
+                <!-- Místo tohoto místa pro jednotlivé produkty budeme vytvářet dynamicky pomocí JavaScriptu -->
+            </div>
+        </section>
+        
+    </main>
+    <footer class="footer">
+        <div>
+                <h6>Nákupy</h6>
+                <ul class="footer-nav">
+                    <li class=""><a href="#">Obchod s oblečením</a></li>
+                    <li><a href="#">Oblíbené boty</a></li>
+                    <li><a href="#">Přívěšky</a></li>
+                    <li><a href="#">Slevy</a></li>
+                </ul>
+        </div>
+        <div>
+                <h6>Nákupy</h6>
+                <ul class="footer-nav">
+                    <li><a href="#">Kontaktuj nás</a></li>
+                    <li><a href="#">Platby</a></li>
+                    <li><a href="#">Doprava</a></li>
+                    <li><a href="#">Reklamace &amp; Vrácení</a></li>
+                </ul>
+        </div>
+            <div class="footer-logo">
+                <img src="pic/logo.png" alt="logo" class="footer-pic">
+            </div>   
+    
+        
+
+</footer>
+    <script src="productFront.js"></script>
+</body>
+</html>

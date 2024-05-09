@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hl.css">
+    <link rel="stylesheet" href="responzive.css">
+    <script src="script.js"></script>
+    <title>Shop</title>
+</head>
+<body>
+    <header>
+    <nav >
+        <div class="menu" onclick="menu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="index.html"><img src="pic/logo.png" alt="logo"></a>
+
+    
+        <ul class="first-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produkty.html">Shop</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="kontakty.html">Contact</a></li>
+        </ul>
+    <ul class="second-nav-list">
+        <a class="login" href="prihlaseni.html">Přihlásit se</a>
+        <a><img src="pic/cart.png" alt="košík"></a>
+    </ul>
+    </nav>
+</header>
+<main>
+
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1280.0968764087959!2d15.757916950955442!3d50.082659201921246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1scs!2scz!4v1701278736688!5m2!1scs!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <section class="cont">
+        <div class="contact-text">
+            <div class="contact-title">
+                <span>Informace</span>
+                <h2>Kontakt</h2>
+                <p>As you might expect of a company that began as a high-end interiors contractor, we pay
+                    strict attention.</p>
+                <ul>
+                        <li>
+                            <h4>Praha</h4>
+                            <p>Masarykova 153 <br>+420 111 111 111</p>
+                        </li>
+                        <li>
+                            <h4>Brno</h4>
+                            <p>Masarykova 420 <br>+420 111 111 112</p>
+                        </li>
+                </ul>
+            </div>
+
+            <form action="">
+                <input type="text" placeholder="Jméno" class="contact-input">
+                <input type="text" placeholder="e-mail" class="contact-input">
+                <textarea placeholder="Zpráva" class="contact-message"></textarea>
+                <a class="primary-btn" href="#">Odeslat</a>
+            </form>
+        </div>
+</section>
+</main>
+<footer class="footer">
+    <div>
+            <h6>Nákupy</h6>
+            <ul class="footer-nav">
+                <li class=""><a href="#">Obchod s oblečením</a></li>
+                <li><a href="#">Oblíbené boty</a></li>
+                <li><a href="#">Přívěšky</a></li>
+                <li><a href="#">Slevy</a></li>
+            </ul>
+    </div>
+    <div>
+            <h6>Nákupy</h6>
+            <ul class="footer-nav">
+                <li><a href="#">Kontaktuj nás</a></li>
+                <li><a href="#">Platby</a></li>
+                <li><a href="#">Doprava</a></li>
+                <li><a href="#">Reklamace &amp; Vrácení</a></li>
+            </ul>
+    </div>
+        <div class="footer-logo">
+            <img src="pic/logo.png" alt="logo" class="footer-pic">
+        </div>   
+
+    
+
+</footer>
+    
+<script>
+    function isAuthenticated() {
+        const token = localStorage.getItem('jwtUserToken');
+        // Pokud token existuje a není prázdný, považujeme uživatele za přihlášeného
+        return token !== null && token !== '';
+    }
+
+    // Funkce pro přesměrování na stránku s přihlášením
+    function redirectToLogin() {
+        window.location.href = 'prihlaseni.html';
+    }
+
+    // Načtení obsahu stránky na základě stavu přihlášení
+    window.onload = function() {
+        if (!isAuthenticated()) {
+            redirectToLogin(); // Pokud je uživatel přihlášený, načteme obsah zabezpečené stránky
+        }
+    };
+</script>
+</body>
+</html>

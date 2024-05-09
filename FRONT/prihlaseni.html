@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Přihlášení</title>
+    <link rel="stylesheet" href="hl.css">
+    <script src="signup.js"></script>
+    <script src="loginFront.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body class="login-page">
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+        <img src="pic/prihl_uvod.jpg" alt="">
+    </div>
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Přihlášení</div>
+          <div>
+            <div class="input-boxes">
+              <div class="input-box">
+                <img src="pic/email.png" alt="email" class="us">
+                <input id="loginEmail" type="text" placeholder="Zadej email" required>
+              </div>
+              <div class="input-box">
+                <img src="pic/lock.png" alt="lock" class="us">
+                <input id="loginPassword" type="password" placeholder="Zadej heslo" required>
+              </div>
+              <div class="text"><a href="#">Zapomenuté heslo?</a></div>
+              <div class="button input-box">
+                <input type="button" value="Přihlásit se" onclick="login()">
+              </div>
+              <div class="text sign-up-text">Nemáš účet? <label for="flip">Zaregistruj se</label></div>
+            </div>
+          </div>
+      </div>
+        <div class="signup-form">
+          <div class="title">Registrace</div>
+        <div>
+            <div class="input-boxes">
+              <div class="input-box">
+                <img src="pic/user.png" alt="user" class="us">
+                <input id="signupName" type="text" placeholder="Zadej jméno">
+              </div>
+              <div class="input-box">
+                <img src="pic/email.png" alt="email" class="us">
+                <input id="signupEmail" type="email" placeholder="Zadej email">
+              </div>
+              <div class="input-box">
+                <img src="pic/lock.png" alt="lock" class="us">
+                <input id="signupPassword" type="password" placeholder="Zadej heslo">
+              </div>
+              <div class="button input-box">
+                <input type="button" value="Zaregistruj se" onclick="saveUser()">
+              </div>
+              <div class="text sign-up-text">Máš už účet? <label for="flip">Přihlaš se</label></div>
+            </div>
+          </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>
