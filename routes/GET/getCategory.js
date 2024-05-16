@@ -1,8 +1,8 @@
-const getProduct = require('express').Router();
-const productModel = require('../../database/productModel');
+const getCategory = require('express').Router();
+const productModel = require('../../database/categoryModel');
 
-getProduct.get("/getproduct", async (req, res) => {
-productModel.find({}).populate('category')
+getCategory.get("/getcategory", async (req, res) => {
+productModel.find({})
 .then(docs => {
     return res.json({
         msg: "Úspěšně se nám podařilo získat produkty",
@@ -17,4 +17,4 @@ productModel.find({}).populate('category')
 });
 });
 
-module.exports = getProduct;
+module.exports = getCategory;

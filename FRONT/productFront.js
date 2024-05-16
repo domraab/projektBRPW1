@@ -11,10 +11,8 @@ function fetchData() {
                 throw new Error('Data nejsou ve správném formátu');
             }
 
-            // Získání kontejneru pro produkty
             const productContainer = document.getElementById('productContainer');
 
-            // Vytvoření prvků pro každý produkt a přidání do kontejneru
             data.documents.forEach(item => {
                 const productDiv = document.createElement('div');
                 productDiv.classList.add('products');
@@ -48,7 +46,6 @@ function fetchData() {
         });
 }
 
-// Volání funkce pro získání a zobrazení dat po načtení stránky
 window.onload = function() {
     fetchData();
 };

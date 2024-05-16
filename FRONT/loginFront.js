@@ -46,7 +46,7 @@ const login =() =>{
               window.location.href = "employeeHome.html";
              }
              else{
-             // window.location.href = "prihlaseni.html";
+
              alert('kokos');
              }
           })

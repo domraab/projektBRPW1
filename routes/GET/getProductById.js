@@ -4,15 +4,15 @@ const modelProduct = require('../../database/productModel');
 getProductByID.get("/get-product/:productId", async (req, res) => {
     try {
         const productId = req.params.productId;
-        const product = await modelProduct.find({ _id: productId });
+        const product = await modelProduct.find({ _id: productId })
         return res.json({
-            msg: "ĂšspÄ›ĹˇnÄ› se nĂˇm podaĹ™ilo zĂ­skat pozice",
+            msg: "úspěšně se nám podařilo získat pozice",
             documents: product
         });
     } catch (err) {
-        console.error("Chyba pĹ™i zĂ­skĂˇvĂˇnĂ­ pozic:", err);
+        console.error("Chyba při získávání pozic:", err);
         return res.status(500).json({
-            msg: "BohuĹľel nedoĹˇlo k zĂ­skĂˇnĂ­ pozic",
+            msg: "Bohužel nedošlo k získání pozic",
             documents: []
         });
     }

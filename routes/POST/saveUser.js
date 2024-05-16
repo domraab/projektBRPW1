@@ -1,3 +1,4 @@
+require('dotenv').config();
 const saveUser = require('express').Router();
 const modelUser = require('../../database/userModel');
 const bcrypt = require('bcryptjs');
@@ -6,8 +7,8 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'dominikraabeprojekt@gmail.com',
-        pass: 'qfft ppfv xrxw szlc'  
+        user: process.env.EMAIL,
+        pass:  process.env.PASSWORD
     }
 });
 

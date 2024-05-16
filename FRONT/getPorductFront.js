@@ -1,38 +1,5 @@
 
-const checkLogin = () => {
-    const token = localStorage.getItem('token');
-    if(!token){
-        window.location.href = "prihlaseni.html";
-    }
-    fetch('http://localhost:5000/check-login', {
-            method: 'GET',
-            headers: {
-              'Authorization': `Bearer ${token}`
-          }
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Nepodařilo se získat data');
-            }
-            return response.json();
-        })
-        .then(data => {
-          let message = data.message; 
-          if(message != "login"){
-            window.location.href = "prihlaseni.html";
-           }
-        })
-        .catch(error => {
-            console.error('Chyba při získávání dat:', error);
-        });
-}
-window.onload = function() {
-    fetchData();
-    checkLogin();
-};
-
-
-function fetchData() {
+function fetchProducts() {
     fetch('http://localhost:5000/getproduct')
         .then(response => {
             if (!response.ok) {
@@ -45,10 +12,10 @@ function fetchData() {
                 throw new Error('Data nejsou ve správném formátu');
             }
 
-            // Získání kontejneru pro produkty
+
             const productContainer = document.getElementById('homeProducts');
 
-            // Vytvoření prvků pro každý produkt a přidání do kontejneru
+            
             data.documents.forEach(item => {
                 const flexDiv = document.createElement('div');
                 flexDiv.classList.add('flex');
@@ -56,6 +23,10 @@ function fetchData() {
                 const nazevDiv = document.createElement('div');
                 nazevDiv.textContent = item.name;
                 nazevDiv.classList.add('divContainer')
+                
+                const categoryDiv = document.createElement('div');
+                categoryDiv.textContent = item.category.name;
+                categoryDiv.classList.add('divContainer')
 
                 const codeDiv = document.createElement('div');
                 codeDiv.textContent = item.code;
@@ -72,7 +43,7 @@ function fetchData() {
                 const buttonsDiv = document.createElement('div');
                 const smazatButton = document.createElement('button');
                 smazatButton.textContent = 'Smazat';
-                smazatButton.onclick = () => deleteProduct(item._id); // Opravení zavolání funkce deleteProduct
+                smazatButton.onclick = () => deleteProduct(item._id);
                 smazatButton.classList.add('button');
 
                 const videtButton = document.createElement('button');
@@ -86,7 +57,7 @@ function fetchData() {
                 editButton.textContent = 'Edit';
                 editButton.classList.add('button');
                 editButton.onclick =()=> {
-                window.location.href = `products.html?id=${item._id}`;
+                window.location.href = `productAdd.html?id=${item._id}`;
                 }
 
                 buttonsDiv.appendChild(smazatButton);
@@ -94,15 +65,15 @@ function fetchData() {
                 buttonsDiv.appendChild(editButton);
                 buttonsDiv.classList.add('buttonsDiv')
 
-                // Přidání vytvořených prvků do flexDiv
+
                 flexDiv.appendChild(nazevDiv);
+                flexDiv.appendChild(categoryDiv);
                 flexDiv.appendChild(codeDiv);
                 flexDiv.appendChild(cenaDiv);
                 flexDiv.appendChild(popisDiv);
                 flexDiv.appendChild(buttonsDiv);
                 flexDiv.classList.add('flexDiv')
 
-                // Přidání flexDiv do kontejneru homeProducts
                 productContainer.appendChild(flexDiv);
             });
         })
@@ -114,7 +85,7 @@ function fetchData() {
 
 
 
-async function deleteProduct(productId) { // Přidání asynchronního označení
+async function deleteProduct(productId) { 
     try {
         const response = await fetch(`http://localhost:5000/delete-product/${productId}`, { // Použití await pro počkání na odpověď
             method: 'DELETE',
@@ -151,3 +122,7 @@ const updateVisibility = async(productId) =>{
         console.error('Chyba při aktualizaci produktu:', error);
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetchProducts();
+});

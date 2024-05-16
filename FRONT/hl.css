@@ -685,56 +685,10 @@ verification
 .form-ver .input-box input:valid{
   border-color: rgb(255, 195, 84);
 }
-/***************
-přidání produktu
-****************/
-
-.containerP {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-h2 {
-  margin-bottom: 20px;
-}
-
-.add-product-form label {
-  display: block;
-  margin-bottom: 10px;
-}
-.add-product-form {
-  display: flex;
-  flex-direction: column;
-  
-}
-.add-product-form input,
-.add-product-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.add-product-form button {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.add-product-form button:hover {
-  background-color: #0056b3;
-}
 
 /***************
 strana produktu
 ****************/
-/* Základní styly pro stránku produktu */
 
 
 header {
@@ -749,7 +703,6 @@ footer {
   color: #fff;
   text-align: center;
   padding: 10px 0;
-  position: fixed;
   bottom: 0;
   width: 100%;
 }

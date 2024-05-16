@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje webová stránka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="headerDiv">
+        <div class="menu" onclick="aside()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="employeeHome.html">Home</a>
+        <a href="index.html" class="logo">Eshop</a>
+        </div>
+        <div class="user"></div>
+    </header>
+
+    <aside class="aside">
+        <ul>
+            <li><a href="productBack.html">Produkt</a>
+                <ul>
+                    <li><a href="productAdd.html">Přidání produktu</a></li>
+                </ul>
+            </li>
+            <li><a href="category.html">Kategorie</a></li>
+            <li><a href="#">Objednávky</a></li>
+            <li><a href="#">Uživatelé</a></li>
+            <li><a href="#">Nastavení obchodu</a></li>
+            <li><a href="#">Statistiky</a></li>
+            <li><a href="#">Newsletter</a></li>
+        </ul>
+    </aside>
+    <main>
+        <div class="center-content">
+            <h2>Seznam produktů</h2>
+            <div class="HomeProductsContainer flex">
+                <div id="homeProducts" class="flex">
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="getPorductFront.js"></script>
+</body>
+</html>

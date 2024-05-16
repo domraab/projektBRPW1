@@ -8,35 +8,94 @@ body {
     justify-content: center;
     align-items: center;
 }
+.flexDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    font-size: 18px;
+    padding: 15px 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5rem 1rem;
+    border: 1px solid rgb(248, 248, 248);
+}
 
-/*Libor CSS*/
+/***************
+přidání produktu
+****************/
+
+
+.productDescription {
+    resize: none;
+
+}
+.containerP {
+    
+    max-width: 600px;
+    margin: 2% auto;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5rem 1rem;
+    border: 1px solid rgb(248, 248, 248);
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .add-product-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .add-product-form {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .add-product-form input,
+  .add-product-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+  }
+  
+  .add-product-form button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-product-form button:hover {
+    background-color: #0056b3;
+  }
+
+
 .HomeProductsContainer{
     flex-direction: column;
 }
 
-#homeProducts{
+#homeProducts, #homeCategory{
     flex-direction: column;
     gap: 20px;
     width: 100%;
 }
 
 .button{
-    background-color: blue;
+    background-color: #ffc354;
     color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
 }
-
-
-.flexDiv{
-    display: flex;
-    gap: 10px;
-    width: 90%;
-    align-items: start;
-    justify-content: space-between;
-    border: 1px solid gray;
-    padding: 10px 30px;
+.button:nth-child(1){
+    background-color: black;
+}
+.button:hover {
+    cursor: pointer;
 }
 .buttonsDiv{
     display: flex;
@@ -46,60 +105,95 @@ body {
 header{
     background-color: #333;
     color: #fff;
+    position: relative;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+
     z-index: 1;
 }
-nav {
-    background-color: #f4f4f4;
+.headerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 10px;
+}
+
+header a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 4px;
+    border-radius: 20%;
+    border: solid white 2px;
+}
+header a:hover {
+    color: #ffc354;
+    border: #ffc354 solid 2px;
+}
+.menu {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    display: none;
+}
+.menu span {
+    height: 10%;
+    background-color: #ffffff;
+}
+aside {
+    background-color: #ffc354;
     width: 250px;
     height: calc(100% - 50px);
     position: fixed;
-
-    left: 0;
+    left: 0px;
     overflow-y: auto;
     z-index: 2;
+    transition: left 0.3s ease-in-out;
 
 }
-nav ul {
+aside ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-nav ul li {
+aside ul li {
     padding: 10px;
-    border-bottom: 1px solid #ccc;
-    position: relative; /* Přidané pro pozicování podnabídky */
+    border-bottom: 1px solid #ffffff;
+    position: relative;
 }
 
-nav ul li ul {
+aside ul li ul{
     display: none;
-    position: absolute; /* Přidané pro pozicování podnabídky */
-    top: 100%; /* Přidané pro pozicování podnabídky pod rodičem */
-    left: 0; /* Přidané pro pozicování podnabídky */
-    width: 100%; /* Přidané pro zarovnání podnabídky s rodičem */
-    background-color: #f4f4f4;
-    z-index: 3; /* Přidané pro zobrazení nad rodičem */
-    transition: max-height 0.3s ease; /* Animace zobrazení a skrytí */
+    position: absolute;
+    top: 100%; 
+    left: 0; 
+    width: 100%; 
+    background-color: #ffc354;
+    z-index: 3; 
+    transition: max-height 0.3s ease; 
 }
 
-nav ul li:hover ul {
-    display: block; /* Zobrazení podnabídky při najetí myši */
-    max-height: 200px; /* Výchozí výška podnabídky */
-    overflow-y: auto; /* Přidané pro případ, že by se obsah překrýval */
-}
-
-nav ul li a {
+aside ul li a {
     text-decoration: none;
-    color: #333;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
 }
 
-nav ul li a:hover {
-    background-color: #ddd;
+aside ul li:hover ul {
+    display: block; 
+    max-height: 200px; 
+    overflow-y: auto; 
+}
+
+aside ul li a:hover {
+    background-color: #ffc354;
 }
 main {
     margin-left: 250px;
@@ -118,7 +212,7 @@ main {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px; /* Přidáno pro odsazení od nadpisu */
+    margin-top: 20px;
 }
 
 th, td {
@@ -178,14 +272,114 @@ textarea {
 }
 
 button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
+display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 14px 30px;
+    color: #ffffff;
+    background: #000000;
+    letter-spacing: 4px;
+    position: relative;
+    bottom: 0;
     cursor: pointer;
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    background: #000000;
+    position: relative;
+    bottom: 1px;
+    transition: bottom 0.1s ease-in;
 }
+.input-row {
+    margin-bottom: 10px; 
+    display: flex; 
+    align-items: center;
+  }
+  
+  .input-row label {
+    margin-right: 10px;
+  }
+  
+  .input-row select {
+    flex: 1;
+  }
+
+  /*
+  employee home
+  */
+  #homeMain{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+  }
+  @media (max-width: 900px) {
+    .menu {
+        display: flex;
+    }
+    aside {
+        left: -300px;
+    }
+    #homeMain{
+      grid-template-columns: 1fr 1fr;
+      margin-left: 0;
+     
+    }
+  }
+  @media (max-width: 500px) {
+    .menu {
+        display: flex;
+    }
+    #homeMain{
+      grid-template-columns:1fr;
+    }
+  }
+  .homeDiv {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    width: 80%;
+    margin: 4%;
+    min-height: 100px;
+    border-radius: 5px;
+    padding: 2% 5%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0.5rem 1rem;
+    border: 1px solid rgb(248, 248, 248);
+  }
+  .homeDiv:hover {
+    transition: 0.3s ease-in-out 0s;
+    box-shadow: rgba(0, 0, 0, 0.40) 0px 0.5rem 1rem;
+
+  }
+  .homeDiv img {
+    height: 75px;
+  }
+  .homeDiv:nth-child(1) a {
+    color: #ffbb00;
+  }
+  .homeDiv:nth-child(2) a {
+    color: #00ccff;
+  }
+  .homeDiv:nth-child(3) a {
+    color: #cc00ffab;
+  }
+  .homeDiv:nth-child(4) a {
+    color: #0fb300;
+  }
+  .homeDiv:nth-child(5) a {
+    color: #a305ca;
+  }
+  .homeDiv:nth-child(6) a {
+    color: #3bb430;
+  }
+  .homeDiv:nth-child(7) a {
+    color: #cc00ffab;
+  }
+  .homeA {
+    font-weight: 700;
+    text-decoration: none;
+    color: #000000;
+  }
+  .homeA:hover {
+    color: #818181;
+  }

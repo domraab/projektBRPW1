@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <body>
+        <header>
+            <div class="headerDiv">
+            <div class="menu" onclick="aside()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="employeeHome.html">Home</a>
+            <a href="index.html" class="logo">Eshop</a>
+            </div>
+            <div class="user"></div>
+        </header>
+    
+        <aside class="aside">
+            <ul>
+                <li><a href="productBack.html">Produkt</a>
+                    <ul>
+                        <li><a href="productAdd.html">Přidání produktu</a></li>
+                    </ul>
+                </li>
+                <li><a href="category.html">Kategorie</a></li>
+                <li><a href="#">Objednávky</a></li>
+                <li><a href="#">Uživatelé</a></li>
+                <li><a href="#">Nastavení obchodu</a></li>
+                <li><a href="#">Statistiky</a></li>
+                <li><a href="#">Newsletter</a></li>
+            </ul>
+        </aside>
+    <div class="containerP">
+        <h2>Přidat produkt</h2>
+        <div class="add-product-form">
+            <label for="product-name">Název:</label>
+            <input type="text" id="productName" name="product-name" required>
+
+            <div class="input-row">
+                <label for="product-category">Kategorie:</label>
+                <select id="productCategory" name="product-category" required>
+
+                </select>
+            </div>
+            
+            <div class="input-row">
+                <label for="product-brand">Značka:</label>
+                <select id="productBrand" name="product-brand" required>
+                    <option value="none"></option>
+                    <option value="adidas">Adidas</option>
+                    <option value="nike">Nike</option>
+                    <option value="luisVitton">Luis Vitton</option>
+                    <option value="gucci">Gucci</option>
+                </select>
+            </div>
+            
+            <div class="input-row">
+                <label for="product-size">Velikost:</label>
+                <select id="productSize" name="product-size" required>
+                    <option value="none"></option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                </select>
+            </div>
+        
+
+            <label for="product-description">Popis:</label>
+            <textarea id="productDescription" name="product-description" rows="4" required></textarea>
+
+            <label for="product-price">cena:</label>
+            <input type="number" id="productPrice" name="product-Price" min="1" step="0.01" required>
+            
+            <label for="product-code">kód:</label>
+            <input type="number" id="productCode" name="product-code" min="100000" step="1" required>
+
+            <input type="file" id="image">
+            
+            <button type="submit" id="saveButton" >Odeslat</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="saveProductFront.js"></script>
+    <script src="getUserName.js"></script>
+</body>
+</html>

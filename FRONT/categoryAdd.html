@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>categoryAdd</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,38 +39,20 @@
             <li><a href="#">Newsletter</a></li>
         </ul>
     </aside>
-    <main id="homeMain">
-        <div class="homeDiv">
-            <img src="./pic/products.png" alt="products">
-            <a href="productBack.html" class="homeA">Produkty</a>
-        </div>
-        <div class="homeDiv">
-            <img src="./pic/add.png" alt="categories">
-            <a href="category.html" class="homeA">Kategorie</a>
-        </div>
-        <div class="homeDiv">
-            <img src="./pic/shopping-cart.png" alt="orders">
-            <a href="#" class="homeA">objednávky</a>
-        </div>
-        <div class="homeDiv">
-            <img src="./pic/user1.png" alt="user">
-            <a href="#" class="homeA">Uživatelé</a>
-        </div>
-        <div class="homeDiv">
-            <img src="./pic/configuration.png" alt="configuration">
-            <a href="#" class="homeA">Nastavení obchodu</a>
-        </div>
-        <div class="homeDiv">
-            <img src="./pic/analytics.png" alt="Statistics">
-            <a href="#" class="homeA">Statistiky</a>
-        </div>
-        <div class="homeDiv">
-            <img src="./pic/mail.png" alt="mail">
-            <a href="#" class="homeA">Newsletter</a>
-        </div>
-    </main>
+    <div class="containerP">
+        <h2>Přidat Kategorii</h2>
+        <div class="add-product-form">
+            <label for="product-name">Název:</label>
+            <input type="text" id="categoryName" name="categoryName" required>
 
-    <script src="getUserName.js"></script>
+            <label for="product-description">Popis:</label>
+            <textarea id="categoryDescription" name="categoryDescription" rows="4" required></textarea>
+         
+            <button type="submit" id="saveButton" >Odeslat</button>
+        </div>
+    </div>
     <script src="script.js"></script>
+    <script src="saveCategoryFront.js"></script>
+    <script src="getUserName.js"></script>
 </body>
 </html>

@@ -15,11 +15,11 @@ updateProduct.put("/update-product/:productId", (req, res) => {
             if (!updatedProduct) {
                 return res.status(404).json({ msg: "Produkt nebyl nalezen." });
             }
-            return res.json({ msg: `Sklad ${updatedProduct.name} byl ĂşspÄ›ĹˇnÄ› aktualizovĂˇn.`, updatedProduct });
+            return res.json({ msg: `Produkt ${updatedProduct.name} byl úspěšně› aktualizován`, updatedProduct });
         })
         .catch(err => {
-            console.error("Chyba pĹ™i aktualizaci produktu:", err);
-            return res.status(500).json({ msg: "Nastala chyba pĹ™i aktualizaci produktu." });
+            console.error("Chyba při aktualizaci produktu:", err);
+            return res.status(500).json({ msg: "Nastala chyba při aktualizaci produktu." });
         });
 });
 

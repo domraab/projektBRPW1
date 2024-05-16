@@ -63,3 +63,23 @@ function clickSize(){
 }
 
 
+/*
+employeehome
+*/
+let clickAside = 0;
+function aside(){
+ let homeMain = document.getElementById("homeMain");
+ let nav = document.querySelector(".aside");
+ clickAside++;
+ if (clickAside == 1) {
+     nav.style.left = "0px";
+    homeMain.style.marginLeft = "250px";
+    } 
+   
+ if (clickAside == 2){
+     nav.style.left = "-300px";
+     homeMain.style.marginLeft = "0px";
+     clickAside = 0;
+   }
+}
+

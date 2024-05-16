@@ -8,14 +8,14 @@ deleteProduct.delete("/delete-product/:productId", async (req, res) => {
 
         const deletedProduct = await modelProduct.findByIdAndDelete(productId);
         if (!deletedProduct) {
-            return res.status(404).json({ msg: "Dodavatel nebyl nalezen." });
+            return res.status(404).json({ msg: "produkt nebyl nalezen." });
         }
     
         return res.json({ msg: `Produkt ${deletedProduct.name} byl smazán `});
     } catch (err) {
-        // ZachycenĂ­ a zpracovĂˇnĂ­ chyby
-        console.error("Chyba pĹ™i mazĂˇnĂ­ dodavatele:", err);
-        return res.status(500).json({ msg: "Nastala chyba pĹ™i mazĂˇnĂ­ dodavatele." });
+
+        console.error("Chyba při mazání­ produktu:", err);
+        return res.status(500).json({ msg: "Nastala chyba při mazání produktu." });
     }
 });
 
