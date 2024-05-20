@@ -36,6 +36,13 @@ function fetchData() {
                 buyLink.href = '#';
                 buyLink.classList.add('primary-btn');
                 buyLink.textContent = 'Kup nyní';
+                /*Přidávání položek do košíku*/
+                buyLink.onclick = ()=> {
+                    addToCart(
+                    item._id,item.name, item.url, item.price);
+                    alert('Položka: ' + item.name + ' byla přidána do košíku');
+                }; 
+                
                 productDiv.appendChild(buyLink);
                 
                 productContainer.appendChild(productDiv);
@@ -44,6 +51,29 @@ function fetchData() {
         .catch(error => {
             console.error('Chyba při získávání dat:', error);
         });
+}
+
+function addToCart(id, name, img, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    let newProduct = {
+        id:id,
+        name: name,
+        img: img,
+        price: price
+    };
+
+    let productExists = cart.some(product => product.name === name);
+
+    if (!productExists) {
+        cart.push(newProduct);
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        console.log('Product added to cart:', newProduct);
+    } else {
+        console.log('Product already in cart:', newProduct);
+    }
 }
 
 window.onload = function() {

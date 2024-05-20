@@ -20,7 +20,12 @@ const saveCategory = require('./routes/POST/saveCategory');
 const getCategory = require('./routes/GET/getCategory');
 const deleteCategory = require('./routes/POST/deleteCategory');
 const updateCategory = require('./routes/POST/updateCategory');
-const getCategoryById = require('./routes/GET/getCategoryById')
+const getCategoryById = require('./routes/GET/getCategoryById');
+const saveOrder = require('./routes/POST/saveOrder');
+const getOrder = require('./routes/GET/getOrder');
+const getOrderInfo = require('./routes/GET/getOrderInfo');
+const getProductVisibility = require('./routes/GET/getVisibility');
+const updateVisibleFalseProduct = require('./routes/POST/updateVisibilityFalse');
 connectDB();
 
 app.listen(PORT, () => {
@@ -38,6 +43,9 @@ app.use("/",cors(), getVisibleProduct);
 app.use("/",cors(), getUserInfo);
 app.use("/",cors(), getCategory);
 app.use("/",cors(), getCategoryById);
+app.use("/",cors(), getOrder);
+app.use("/",cors(), getOrderInfo);
+app.use("/",cors(), getProductVisibility);
 /*
 Post
 */
@@ -51,3 +59,5 @@ app.use("/",cors(), updateVisibleProduct);
 app.use("/",cors(), saveCategory);
 app.use("/",cors(), deleteCategory);
 app.use("/",cors(), updateCategory);
+app.use("/",cors(), saveOrder);
+app.use("/",cors(), updateVisibleFalseProduct);

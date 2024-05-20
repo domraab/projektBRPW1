@@ -47,10 +47,16 @@ function fetchProducts() {
                 smazatButton.classList.add('button');
 
                 const videtButton = document.createElement('button');
-                videtButton.textContent = 'Viditelnost';
+                if(item.isVisible){
+                    videtButton.textContent = 'Viditelný';  
+                }
+
+                else{
+                    videtButton.textContent = 'Neviditelný';    
+                }
                 videtButton.classList.add('button');
                 videtButton.onclick =()=>{
-                    updateVisibility(item._id);
+                    checkVisibility(item._id);
                 }
 
                 const editButton = document.createElement('button');
@@ -86,7 +92,9 @@ function fetchProducts() {
 
 
 async function deleteProduct(productId) { 
+    
     try {
+        
         const response = await fetch(`http://localhost:5000/delete-product/${productId}`, { // Použití await pro počkání na odpověď
             method: 'DELETE',
             headers: {
@@ -96,10 +104,7 @@ async function deleteProduct(productId) {
         if (!response.ok) {
             throw new Error('Nepodařilo se smazat produkt');
         }
-        const productElement = document.getElementById(productId);
-        productElement.remove();
-        console.log('Produkt byl úspěšně smazán');
-        location.reload(location.href);
+        window.location.reload();
     } catch (error) {
         console.error('Chyba při mazání produktu:', error);
     }
@@ -123,6 +128,52 @@ const updateVisibility = async(productId) =>{
     }
 }
 
+
+
+
+const updateFalseVisibility = async(productId) =>{
+    try {
+        const response = await fetch(`http://localhost:5000/update-visible-product-false/${productId}`, { // Použití await pro počkání na odpověď
+            method: 'put',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        if (!response.ok) {
+            throw new Error('Nepodařilo se aktualizovat produkt');
+        }
+        
+    } catch (error) {
+        console.error('Chyba při aktualizaci produktu:', error);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     fetchProducts();
 });
+
+
+const checkVisibility = (productId) =>{
+    fetch(`http://localhost:5000/get-visibility/${productId}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Nepodařilo se získat data');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if(data.msg === 'true'){
+            updateFalseVisibility(productId);
+            window.location.reload();
+        }
+
+        if(data.msg === 'false'){
+            updateVisibility(productId);
+            window.location.reload();
+        }
+    })
+    .catch(error => {
+        console.error('Chyba při získávání dat:', error);
+    });
+}
+

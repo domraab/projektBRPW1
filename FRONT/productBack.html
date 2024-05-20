@@ -27,8 +27,12 @@
                     <li><a href="productAdd.html">Přidání produktu</a></li>
                 </ul>
             </li>
-            <li><a href="category.html">Kategorie</a></li>
-            <li><a href="#">Objednávky</a></li>
+            <li><a href="category.html">Kategorie</a>
+                <ul>
+                    <li><a href="categoryAdd.html">Přidání kategorie</a></li>
+                </ul>
+            </li>
+            <li><a href="orders.html">Objednávky</a></li>
             <li><a href="#">Uživatelé</a></li>
             <li><a href="#">Nastavení obchodu</a></li>
             <li><a href="#">Statistiky</a></li>
@@ -38,6 +42,17 @@
     <main>
         <div class="center-content">
             <h2>Seznam produktů</h2>
+            <div class="productHeader">
+                <ul>
+                    <li>Název</li>
+                    <li>Kategorie</li>
+                    <li>kód</li>
+                    <li>cena</li>
+                    <li>popis</li>
+                    <li></li>
+
+                </ul>
+            </div>
             <div class="HomeProductsContainer flex">
                 <div id="homeProducts" class="flex">
 
@@ -46,5 +61,6 @@
         </div>
     </main>
     <script src="getPorductFront.js"></script>
+    <script src="getUserName.js"></script>
 </body>
 </html>

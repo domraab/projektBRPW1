@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="hl.css">
-    <title>Detail produktu</title>
+    <link rel="stylesheet" href="responzive.css">
+    <script src="script.js"></script>
+    <title>Shop</title>
 </head>
 <body>
     <header>
@@ -19,30 +21,29 @@
         
             <ul class="first-nav-list">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="produkty.html">Shop</a></li>
-                <li><a href="#">Pages</a></li>
+                <li><a href="product.html">Produkty</a></li>
+                <li><a href="#">Strany</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="kontakty.html">Contact</a></li>
+                <li><a href="contacts.html">Kontakty</a></li>
             </ul>
         <ul class="second-nav-list">
-            <a class="login" href="prihlaseni.html">Přihlásit se</a>
-            <a><img src="pic/cart.png" alt="košík"></a>
+            <a class="login" href="login.html"><div class="user"></div></a>
+            <a href="cart.html"><img src="pic/cart.png" alt="košík"></a>
         </ul>
         </nav>
     </header>
-
-    <main class="product-details">
-        <div class="product-image">
-            <img src="pic/produkt.jpg" alt="Produkt">
+    <div class="cart-container">
+        <h1>Košík</h1>
+        <div class="cart-content">
+            <div id="cart-items">
+            </div>
+            <div class="cart-summary">
+                <h2>Shrnutí nákupu</h2>
+                <p><span id="total-price"></span></p>
+                <a href="checkout.html"><button class="checkout-btn">Pokračovat k platbě</button></a>
+            </div>
         </div>
-        <div class="product-info">
-            <h1>Název produktu</h1>
-            <p>Cena: 99,99 €</p>
-            <p>Popis produktu: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non neque vitae justo volutpat cursus.</p>
-            <button class="primary-btn">Přidat do košíku</button>
-        </div>
-    </main>
-
+    </div>
     <footer class="footer">
         <div>
                 <h6>Nákupy</h6>
@@ -66,8 +67,10 @@
                 <img src="pic/logo.png" alt="logo" class="footer-pic">
             </div>   
     
-        
-            
+        <script src="cart.js"></script>
+        <script src="getUserName.js"></script>
+
 </footer>
+
 </body>
 </html>

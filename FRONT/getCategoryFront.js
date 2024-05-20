@@ -77,10 +77,7 @@ async function deleteProduct(categoryId) {
         if (!response.ok) {
             throw new Error('Nepodařilo se smazat Kategorii');
         }
-        const productElement = document.getElementById(categoryId);
-        productElement.remove();
-        console.log('Kategorie byl úspěšně smazán');
-        location.reload(location.href);
+        window.location.reload();
     } catch (error) {
         console.error('Kategorie při mazání produktu:', error);
     }

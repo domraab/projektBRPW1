@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objednávka</title>
     <link rel="stylesheet" href="hl.css">
-    <title>Detail produktu</title>
 </head>
 <body>
     <header>
@@ -19,29 +19,40 @@
         
             <ul class="first-nav-list">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="produkty.html">Shop</a></li>
-                <li><a href="#">Pages</a></li>
+                <li><a href="product.html">Produkty</a></li>
+                <li><a href="#">Strany</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="kontakty.html">Contact</a></li>
+                <li><a href="contacts.html">Kontakty</a></li>
             </ul>
         <ul class="second-nav-list">
-            <a class="login" href="prihlaseni.html">Přihlásit se</a>
-            <a><img src="pic/cart.png" alt="košík"></a>
+            <a class="login" href="login.html"><div class="user"></div></a>
+            <a href="cart.html"><img src="pic/cart.png" alt="košík"></a>
         </ul>
         </nav>
     </header>
+    <div class="order-container">
+        <h1>Objednávka</h1>
+        <div>
+            <div id="order-summary" class="order-summary">
+                <h2>Shrnutí objednávky</h2>
+       
 
-    <main class="product-details">
-        <div class="product-image">
-            <img src="pic/produkt.jpg" alt="Produkt">
+                <p>Celková cena: <span id="total-price">800 Kč</span></p>
+            </div>
+            <div class="customer-info">
+                <h2>Informace o zákazníkovi</h2>
+                <label for="name">Jméno:</label>
+                <input type="text" id="nameCheckout" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="emailCheckout" name="email" required>
+                <label for="address">Adresa:</label>
+                <input type="text" id="addressCheckout" name="address" required>
+                <label for="phone">Telefon:</label>
+                <input type="tel" id="phoneCheckout" name="phone" required>
+                <button type="button" id="saveCheckout" class="submit-btn">Odeslat objednávku</button>
+            </div>
         </div>
-        <div class="product-info">
-            <h1>Název produktu</h1>
-            <p>Cena: 99,99 €</p>
-            <p>Popis produktu: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non neque vitae justo volutpat cursus.</p>
-            <button class="primary-btn">Přidat do košíku</button>
-        </div>
-    </main>
+    </div>
 
     <footer class="footer">
         <div>
@@ -67,7 +78,9 @@
             </div>   
     
         
-            
+            <script src="checkout.js"></script>
+            <script src="saveOrderFront.js"></script>
+            <script src="getUserName.js"></script>
 </footer>
 </body>
 </html>

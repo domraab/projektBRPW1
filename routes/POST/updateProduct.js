@@ -3,12 +3,13 @@ const modelProduct = require('../../database/productModel');
 
 updateProduct.put("/update-product/:productId", (req, res) => {
     const productId = req.params.productId;
-    const { name, code, category, description} = req.body;
+    const { name, code, price, category, description} = req.body;
     
   
     modelProduct.findByIdAndUpdate(productId, { name:name,
         name:name,
         code:code,
+        price:price,
         category:category,
         description:description}, { new: true })
         .then(updatedProduct => {

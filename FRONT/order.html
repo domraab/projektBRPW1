@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Category</title>
+    <title>Admin - Objednávky</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,28 +39,24 @@
             <li><a href="#">Newsletter</a></li>
         </ul>
     </aside>
-    <main>
-        <div class="center-content">
-            <h2>Seznam Kategorii</h2>
-            <div class="categoryHeader">
-                <ul>
-                    <li>Název</li>
-                    <li>popis</li>
-                    <li></li>
+    <div class="admin-container">
+        <h1>Seznam objednávek</h1>
+        <div id="order-list">
+            <div id="products-order">
 
-                </ul>
             </div>
-            <div class="HomeProductsContainer flex">
-                <div id="homeCategory" class="flex">
-
-                </div>
+            <div class="order-info">
+                <h2>Informace o zákazníkovi</h2>
+                <span id="orderName"></span>
+                <span id="orderEmail"></span>
+                <span id="orderPhone"></span>
+                <span id="orderDate"></span>
+                <span id="orderPrice"></span>
             </div>
         </div>
-    </main>
-
-
-
-    <script src="getCategoryFront.js"></script>
+    </div>
+    <script src="getOrderInfo.js"></script>
     <script src="getUserName.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
