@@ -1091,7 +1091,8 @@ h1 {
 }
 
 .checkout-btn {
-  background-color: #28a745;
+  
+  background-color: #000000;
   color: #fff;
   border: none;
   padding: 15px 20px;
@@ -1102,7 +1103,7 @@ h1 {
 }
 
 .checkout-btn:hover {
-  background-color: #218838;
+  background-color: #444444;
 }
 
 /* Responsive Styles */
@@ -1232,7 +1233,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
 }
 
 .submit-btn {
-  background-color: #28a745;
+  background-color: #000000;
   color: #fff;
   border: none;
   padding: 15px 20px;
@@ -1243,7 +1244,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
 }
 
 .submit-btn:hover {
-  background-color: #218838;
+  background-color: #444444;
 }
 
 /* Responsive Styles */

@@ -29,7 +29,7 @@ function fetchData() {
                 productDiv.appendChild(nameHeading);
                 
                 const priceHeading = document.createElement('h4');
-                priceHeading.textContent = item.price + ' €';
+                priceHeading.textContent = item.price + ' Kč';
                 productDiv.appendChild(priceHeading);
                 
                 const buyLink = document.createElement('a');
